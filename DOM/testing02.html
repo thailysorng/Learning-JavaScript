@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amamzon Shipping Calculator</p>
+    <p>Order Under $40 = +10 shipping.</p>
+    <p>Order Over $40 = FREE shipping.</p>
+
+    <input type="text" placeholder="Cost" onkeydown="
+        checkKey(event);
+    ">
+
+    <button onclick="
+        check();
+    ">Calculate</button>
+
+    <p class="result"></p>
+
+    <script>
+        function checkKey(event) {
+            if(event.key === 'Enter') {
+                check();
+            }
+        }
+        
+
+        function check() {
+            const cost = Number(document.querySelector('input').value);
+            if(cost >= 40)
+                document.querySelector('.result').innerHTML = cost;
+            else if(cost < 40 && cost > 0)
+                document.querySelector('.result').innerHTML = cost + 10;
+            else
+                document.querySelector('.result').innerHTML = "sorry don't understand. ";
+        }
+    </script>
+</body>
+</html>
