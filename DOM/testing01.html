@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .js-el-button {
+            background-color: black;
+            color: white;
+            padding: 10px 15px 10px 15px;
+            border: none;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            font-weight: bold;
+        } 
+
+        .js-el-button:hover {
+            cursor: pointer;
+        }
+
+        .is-subscribed {
+            background-color: white;
+            color: black;
+            border: 2px solid grey;
+        }
+    </style>
 </head>
 <body>
+
     Youtube Subscribe Button<br>
     <button onclick="
         subscribe();
@@ -18,8 +40,10 @@
             const buttonEle = document.querySelector('button');
             if(buttonEle.innerHTML === 'Subscribe') {
                 buttonEle.innerHTML = 'Subscribed';
+                buttonEle.classList.add('is-subscribed');
             } else {
                 buttonEle.innerHTML = 'Subscribe';
+                buttonEle.classList.remove('is-subscribed');
             }
         }
     </script>

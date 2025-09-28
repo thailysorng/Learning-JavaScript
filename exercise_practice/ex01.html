@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .on {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="
+        const btn1 = document.querySelector('.btn1');
+        if(btn1.classList.contains('on')) {
+            btn1.classList.remove('on');
+        } else {
+            btn1.classList.add('on');
+        }
+    " class="btn1 on">Gaming</button>
+    <button onclick="
+        const btn2 = document.querySelector('.btn2');
+        if(btn2.classList.contains('on')) {
+            btn2.classList.remove('on');
+        } else {
+            btn2.classList.add('on');
+        }
+    " class="btn2 on">Music</button>
+    <button onclick="
+        const btn3 = document.querySelector('.btn3');
+        if(btn3.classList.contains('on')) {
+            btn3.classList.remove('on');
+        } else {
+            btn3.classList.add('on');
+        }
+    " class="btn3 on">Tech</button>
+  </body>
+</html>

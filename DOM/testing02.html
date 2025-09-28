@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .cost-input {
+            font-size: 15px;
+            padding: 10px;
+        }
+        .calculate-button {
+            font-size: 15px;
+            background-color: green;
+            color: white;
+            padding: 12px 15px;
+            border: none;
+
+        }
+    </style>
 </head>
 <body>
     <p>Amamzon Shipping Calculator</p>
     <p>Order Under $40 = +10 shipping.</p>
     <p>Order Over $40 = FREE shipping.</p>
 
-    <input type="text" placeholder="Cost" onkeydown="
+    <input class="cost-input" type="text" placeholder="Cost" onkeydown="
         checkKey(event);
     ">
 
-    <button onclick="
+    <button class="calculate-button" onclick="
         check();
     ">Calculate</button>
 
@@ -27,15 +41,12 @@
             }
         }
         
-
         function check() {
-            const cost = Number(document.querySelector('input').value);
-            if(cost >= 40)
-                document.querySelector('.result').innerHTML = cost;
-            else if(cost < 40 && cost > 0)
-                document.querySelector('.result').innerHTML = cost + 10;
-            else
-                document.querySelector('.result').innerHTML = "sorry don't understand. ";
+            let cost = Number(document.querySelector('input').value);
+            if(cost < 40 && cost > 0){
+                cost += 10;
+            }
+            document.querySelector('.result').innerHTML = `$${cost}`;
         }
     </script>
 </body>
