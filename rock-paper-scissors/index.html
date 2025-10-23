@@ -9,28 +9,18 @@
 <body>
     <h1>Rock Paper Scissors</h1>
     
-    <button onclick="
-        play('rock');
-    " class="hands">✊</button>
+    <button class="hands js-rock">✊</button>
 
-    <button onclick="
-        play('paper');
-    " class="hands">🖐️</button>
+    <button class="hands js-paper">🖐️</button>
 
-    <button onclick="
-        play('scissors');
-    " class="hands">✌️</button>
+    <button class="hands js-scissors">✌️</button>
 
     <h1 class="result"></h1>
     <p class="decided"></p>
     <p class="scoring"></p>
 
-    <button onclick="
-        resetScore();
-    " class="reset">Reset</button>
-    <button onclick="
-        autoPlay();
-    " class="reset">Auto Play</button>
+    <button class="reset">Reset</button>
+    <button class="autoPlay">Auto Play</button>
 
     <script src="/rock-paper-scissors/script.js"></script>
 </body>

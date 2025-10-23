@@ -40,7 +40,22 @@ function play(person) {
     document.querySelector('.decided').innerHTML = `You chose <span style="font-size: 50px;" class="personSpan">${moves[person]}</span>, Computer chose <span style="font-size: 50px;" class="computerSpan">${moves[computer]}</span>.`;
     document.querySelector('.scoring').innerHTML = `Wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`;
 }
-        
+
+document.querySelector('.js-rock')
+    .addEventListener('click', () => {
+        play('rock');
+    });
+
+document.querySelector('.js-paper')
+    .addEventListener('click', () => {
+        play('paper');
+    });
+
+document.querySelector('.js-scissors')
+    .addEventListener('click', () => {
+        play('scissors');
+    });
+
 function resetScore() {
     score = {wins: 0, loses: 0, ties: 0};
     localStorage.removeItem('score');
@@ -49,18 +64,28 @@ function resetScore() {
     document.querySelector('.scoring').innerHTML = `Wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`;
 }
 
+document.querySelector('.reset')
+    .addEventListener('click', () => {
+        resetScore();
+    });
+
 let auto = true;
 let intervalId;
 function autoPlay() {
     if(auto){
-        intervalId = setInterval(function() {
+        intervalId = setInterval(() => {
             if(auto === true) auto = false
             const player = randomPick();
             play(player);
-        }, 1000);
+        }, 500);
         auto = false;
     } else {
         clearInterval(intervalId);
         auto = true;
     }
 }
+
+document.querySelector('.autoPlay')
+    .addEventListener('click', () => {
+        autoPlay();
+    });
