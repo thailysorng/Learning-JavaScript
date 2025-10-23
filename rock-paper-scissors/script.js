@@ -6,7 +6,7 @@ const moves = {
     scissors: '✌️'
 };
 
-function computerpick() {
+function randomPick() {
     let randomNumber = Math.random();
     if(randomNumber >= 0 && randomNumber <= 1/3){
         return 'rock';
@@ -28,7 +28,7 @@ function getResult(person, computer) {
 }
 
 function play(person) {
-    let computer = computerpick();
+    let computer = randomPick();
     let result = getResult(person, computer);
 
     if(result === 'You Win') score.wins +=1;
@@ -47,4 +47,20 @@ function resetScore() {
     document.querySelector('.result').innerHTML = ``;
     document.querySelector('.decided').innerHTML = ``;
     document.querySelector('.scoring').innerHTML = `Wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`;
+}
+
+let auto = true;
+let intervalId;
+function autoPlay() {
+    if(auto){
+        intervalId = setInterval(function() {
+            if(auto === true) auto = false
+            const player = randomPick();
+            play(player);
+        }, 1000);
+        auto = false;
+    } else {
+        clearInterval(intervalId);
+        auto = true;
+    }
 }
