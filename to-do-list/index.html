@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list, .todo-input {
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            column-gap: 10px;
+            row-gap: 10px;
+            align-items: center;
+        }
+        .todo-input {
+            margin-bottom: 10px;
+        }
+        .js-input, .date {
+            font-size: 15px;
+            padding: 6px;
+        }
+        .add-btn {
+            color: white;
+            background-color: green;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px 0 10px 0;
+        }
+        .remove {
+            color: white;
+            background-color: darkred;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <p>To-Do List Practice 1</p>
+    <div class="todo-input">
+        <input type="text" placeholder="Todo name" class="js-input">
+        <input type="date" class="date">
+        <button onclick="
+            addtodo();
+        " class="add-btn">Add</button>
+    </div>
+    <div class="list">
+        <!-- <div>do homework</div>
+        <div>2025-10-24</div>
+        <button class="remove">Delete</button> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
